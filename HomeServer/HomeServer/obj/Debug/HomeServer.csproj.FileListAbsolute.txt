@@ -1,0 +1,6 @@
+D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\obj\Debug\HomeServer.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\bin\HomeServer.dll.config
+D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\bin\HomeServer.dll
+D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\bin\HomeServer.pdb
+D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\obj\Debug\HomeServer.dll
+D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\obj\Debug\HomeServer.pdb
