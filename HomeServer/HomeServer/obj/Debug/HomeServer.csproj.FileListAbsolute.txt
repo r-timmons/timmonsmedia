@@ -4,3 +4,9 @@ D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\bin\HomeServer.dl
 D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\bin\HomeServer.pdb
 D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\obj\Debug\HomeServer.dll
 D:\Documents\Visual Studio 2013\Projects\HomeServer\HomeServer\obj\Debug\HomeServer.pdb
+D:\timmonsmedia\HomeServer\HomeServer\bin\HomeServer.dll.config
+D:\timmonsmedia\HomeServer\HomeServer\bin\HomeServer.dll
+D:\timmonsmedia\HomeServer\HomeServer\bin\HomeServer.pdb
+D:\timmonsmedia\HomeServer\HomeServer\obj\Debug\HomeServer.csprojResolveAssemblyReference.cache
+D:\timmonsmedia\HomeServer\HomeServer\obj\Debug\HomeServer.dll
+D:\timmonsmedia\HomeServer\HomeServer\obj\Debug\HomeServer.pdb

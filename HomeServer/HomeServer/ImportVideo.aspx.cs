@@ -40,9 +40,9 @@ namespace HomeServer
             //For files in subfolders
             foreach(string directory in directories)
             {
-                files = Directory.GetFiles(directory);
+                string[] fileList = Directory.GetFiles(directory);
 
-                foreach (string file in files)
+                foreach (string file in fileList)
                 {
                     buildFileName(directory, file);
                 }
@@ -68,7 +68,7 @@ namespace HomeServer
             }
 
             bool fileAlreadyConverted = false;
-            string[] convertedFiles = Directory.GetFiles(outputFolder);
+            /*string[] convertedFiles = Directory.GetFiles(outputFolder);
             foreach (string convFile in convertedFiles)
             {
                 string[] convSplit = convFile.Split('\\');
@@ -76,11 +76,11 @@ namespace HomeServer
                 {
                     fileAlreadyConverted = true;
                 }
-            }
+            }*/
             if (!fileAlreadyConverted)
             {
                 //Build source file path
-                string sourceFile = directory + "\\" + title + ext;
+                string sourceFile = directory + '\\' + title + ext;
                 //Split directory
                 string[] dir = directory.Split('\\');
                 string outputFile = "";
