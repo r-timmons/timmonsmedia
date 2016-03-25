@@ -98,7 +98,7 @@ namespace HomeServer
                 BusinessLogicLayer bll = new BusinessLogicLayer();
                 string filename = bll.GetFileName(Int32.Parse(ddl_episodes.SelectedItem.Value));
 
-                videoDiv.InnerHtml = "<video id='vidPlayer' src=\"/videos/" + filename + "\" controls='controls' runat='server' type='video/mp4' width='100%' height='100%'></video>";
+                videoDiv.InnerHtml = "<video id='vidPlayer' src=\"/Videos/" + filename + "\" controls='controls' runat='server' type='video/mp4' width='100%' height='100%'></video>";
             }
         }
 

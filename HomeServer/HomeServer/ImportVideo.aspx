@@ -11,15 +11,6 @@
     <div>
         <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         <br />
-        <br />
-        <asp:Label ID="Label1" runat="server" Text=" "></asp:Label>
-        <br />
-        <br />
-        <br />
-        <asp:Label ID="Label2" runat="server" Text="Items that already existed: " Visible="False"></asp:Label>
-        <br />
-        <asp:ListBox ID="ListBox1" runat="server" Height="301px" Visible="False" Width="432px"></asp:ListBox>
-        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
     </div>
     </form>
 </body>
