@@ -5,9 +5,9 @@ using System.Web;
 
 namespace TimmonsMedia.Models
 {
-    public class Person
+    public class Series
     {
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
     }
 }

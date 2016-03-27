@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TimmonsMedia.Models;
 using TimmonsMedia.Models.Repositories;
 
 namespace TimmonsMedia.Controllers
@@ -30,10 +31,31 @@ namespace TimmonsMedia.Controllers
             return View();
         }
 
-        public JsonResult WhoYouBe()
+        public ActionResult Watch()
         {
-            var repo = new PersonRepo();
-            return Json(repo.IAm(), JsonRequestBehavior.AllowGet);
+            ViewBag.Message = "Watch Series";
+            return View();
+        }
+
+        public JsonResult GetSeries()
+        {
+            var repo = new SeriesRepo();
+            List<Series> list = repo.GetSeries();
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetEpisodes(int id)
+        {
+            var repo = new EpisodeRepo();
+            List<Episode> list = repo.GetEpisodesBySeries(id);
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetFilename(int id)
+        {
+            var repo = new EpisodeRepo();
+            List<Episode> list = repo.GetEpisodeByID(id);
+            return Json(list, JsonRequestBehavior.AllowGet);
         }
     }
 }

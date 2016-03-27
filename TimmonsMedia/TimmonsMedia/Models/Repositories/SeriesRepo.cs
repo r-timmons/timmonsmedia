@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Web;
-using System.Data.Linq;
 
 namespace TimmonsMedia.Models.Repositories
 {
-    public class PersonRepo
+    public class SeriesRepo
     {
         public DataContext _repo;
 
-        public PersonRepo()
+        public SeriesRepo()
         {
             _repo = new DataContext(@"Data Source=RYANTIMMONS-PC\SQLExpress;Initial Catalog=timmonsmedia; Integrated Security=true;");
         }
 
-        public List<Person> IAm()
+        public List<Series> GetSeries()
         {
-            return _repo.ExecuteQuery<Person>("select * from person").ToList();
+            return _repo.ExecuteQuery<Series>("select * from series").ToList();
         }
     }
 }
