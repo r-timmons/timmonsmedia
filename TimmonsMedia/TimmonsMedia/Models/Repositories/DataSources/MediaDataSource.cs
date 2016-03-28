@@ -39,12 +39,29 @@ namespace TimmonsMedia.Models.Repositories.DataSources
         //    return db.ExecuteQuery<Episode>("select * from episode where id = " + id).ToList();
         //}
 
-        public List<Series> GetSeries(int? id)
+        public List<Series> GetSeries()
         {
             using (var db = new DataContext(_conn))
             {
                 // this will be stored procedure call - J will do later
                 return db.ExecuteQuery<Series>("SELECT ID, Title FROM Series ORDER BY Title").ToList();
+            }
+        }
+
+        public List<Series> GetSeriesByID(int id)
+        {
+            using (var db = new DataContext(_conn))
+            {
+                // this will be stored procedure call - J will do later
+                return db.ExecuteQuery<Series>("SELECT ID, Title FROM Series WHERE ID={0} ORDER BY Title", id).ToList();
+            }
+        }
+
+        public List<Episode> GetEpisodes(int seriesID)
+        {
+            using (var db = new DataContext(_conn))
+            {
+                return db.ExecuteQuery<Episode>("SELECT * FROM Episode WHERE SeriesID={0} ORDER BY Title", seriesID).ToList();
             }
         }
     }

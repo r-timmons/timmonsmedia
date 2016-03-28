@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
-    var getSeries = '@Url.Action("GetSeries", "Media")';
+    //var getSeries = '@Url.Action("GetSeries", "Media")';
+    var getSeries = "http://localhost:52701/Media/GetSeries";
     $.getJSON(getSeries, DisplaySeries);
 });
 
@@ -14,7 +15,8 @@ function DisplaySeries(response) {
 function LoadSeries(id) {
     $("#episodeDiv").empty();
 
-    var getEpisodes = '@Url.Action("GetEpisodes", "Home")/' + id;
+    //var getEpisodes = '@Url.Action("GetEpisodes", "Home")/' + id;
+    var getEpisodes = "http://localhost:52701/Media/GetEpisodes/" + id;
 
     $.getJSON(getEpisodes, DisplayEpisodes);
 };
