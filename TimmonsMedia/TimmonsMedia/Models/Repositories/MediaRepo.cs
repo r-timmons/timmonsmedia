@@ -18,6 +18,9 @@ namespace TimmonsMedia.Models.Repositories
             _db = new MediaDataSource(config[MEDIADB_KEY]);
         }
 
-        
+        public List<Series> GetSeries()
+        {
+            return _db.GetSeries(null).ToList();
+        }
     }
 }

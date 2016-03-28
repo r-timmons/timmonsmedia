@@ -16,31 +16,13 @@ namespace TimmonsMedia.Controllers
 
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
+            base.Initialize(requestContext);
             _repo = new MediaRepo(ConfigurationManager.AppSettings);
         }
 
-        [HttpGet]
         public JsonResult GetSeries()
         {
-            var repo = new SeriesRepo();
-            List<Series> list = repo.GetSeries();
-            return Json(list, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
-        public JsonResult GetEpisodes(int id)
-        {
-            var repo = new EpisodeRepo();
-            List<Episode> list = repo.GetEpisodesBySeries(id);
-            return Json(list, JsonRequestBehavior.AllowGet);
-        }
-
-        [HttpGet]
-        public JsonResult GetFilename(int id)
-        {
-            var repo = new EpisodeRepo();
-            List<Episode> list = repo.GetEpisodeByID(id);
-            return Json(list, JsonRequestBehavior.AllowGet);
+            return Json(_repo.GetSeries(), JsonRequestBehavior.AllowGet);
         }
     }
 }
