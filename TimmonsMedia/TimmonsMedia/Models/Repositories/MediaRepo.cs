@@ -20,7 +20,18 @@ namespace TimmonsMedia.Models.Repositories
 
         public List<Series> GetSeries()
         {
-            return _db.GetSeries(null).ToList();
+            return _db.GetSeries().ToList();
+        }
+
+        // Mash this into GetSeries but leave now for testing
+        public List<Series> GetSeriesByID(int id)
+        {
+            return _db.GetSeriesByID(id);
+        }
+
+        public List<Episode> GetEpisodes(int seriesID)
+        {
+            return _db.GetEpisodes(seriesID);
         }
     }
 }

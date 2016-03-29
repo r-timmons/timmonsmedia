@@ -24,5 +24,16 @@ namespace TimmonsMedia.Controllers
         {
             return Json(_repo.GetSeries(), JsonRequestBehavior.AllowGet);
         }
+
+        // Mash this into GetSeries but leave now for testing
+        public JsonResult GetSeriesByID(int id)
+        {
+            return Json(_repo.GetSeriesByID(id), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetEpisodes(int id)
+        {
+            return Json(_repo.GetEpisodes(id), JsonRequestBehavior.AllowGet);
+        }
     }
 }
