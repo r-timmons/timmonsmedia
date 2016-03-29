@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Timmons Media</title>
+
+    <link href="../Content/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="../../Scripts/global.js"></script>
+
+    <script src="../../Scripts/jquery-1.10.2.js"></script>
+
+    <script src="../../Scripts/Media/Series.js"></script>
+
+    <script src="../../Scripts/bootstrap.js"></script>
+
+    <style>
+        .selected
+        {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            z-index:3;
+            transform:scale(1.05);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Timmons Media <small>Ghetto Version</small></h1>
+    <div class="container-fluid body-content" style="overflow-x: hidden;">
+        <div class="row">
+            <div class="col-sm-3 col-md-6 col-lg-4" style="border:1px solid black; padding-top:5px; height:100p%; overflow-y: scroll;">
+                <div id="seriesDiv"></div>
+                <div id="episodeDiv"></div>
+            </div>
+            <div id="videoDiv" class="col-sm-9 col-md-6 col-lg-7" style="border:1px solid red"></div>
+        </div>
+    </div>
+</body>
+</html>

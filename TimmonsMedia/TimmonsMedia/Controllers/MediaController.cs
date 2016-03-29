@@ -20,9 +20,22 @@ namespace TimmonsMedia.Controllers
             _repo = new MediaRepo(ConfigurationManager.AppSettings);
         }
 
+        //Returns list of all series in the DB
         public JsonResult GetSeries()
         {
             return Json(_repo.GetSeries(), JsonRequestBehavior.AllowGet);
+        }
+
+        //Returns list of Episodes in the given series
+        public JsonResult GetEpisodesBySeries(int id)
+        {
+            return Json(_repo.GetEpisodesBySeries(id), JsonRequestBehavior.AllowGet);
+        }
+
+        //Returns episode with given id
+        public JsonResult GetEpisodeByID(int id)
+        {
+            return Json(_repo.GetEpisodeByID(id), JsonRequestBehavior.AllowGet);
         }
     }
 }

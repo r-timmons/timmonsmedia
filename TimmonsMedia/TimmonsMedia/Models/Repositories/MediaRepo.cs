@@ -22,5 +22,15 @@ namespace TimmonsMedia.Models.Repositories
         {
             return _db.GetSeries(null).ToList();
         }
+
+        public List<Episode> GetEpisodesBySeries(int id)
+        {
+            return _db.GetEpisodesBySeries(id);
+        }
+
+        public List<Episode> GetEpisodeByID(int id)
+        {
+            return _db.GetEpisodeByID(id);
+        }
     }
 }
