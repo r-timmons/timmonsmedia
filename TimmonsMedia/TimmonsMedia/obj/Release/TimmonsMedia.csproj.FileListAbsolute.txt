@@ -114,3 +114,9 @@ C:\Projects\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.WebHost.d
 C:\Projects\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Net.Http.Formatting.xml
 C:\Projects\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.xml
 C:\Projects\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.WebHost.xml
+D:\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Net.Http.Formatting.dll
+D:\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.dll
+D:\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.WebHost.dll
+D:\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Net.Http.Formatting.xml
+D:\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.xml
+D:\timmonsmedia\TimmonsMedia\TimmonsMedia\bin\System.Web.Http.WebHost.xml

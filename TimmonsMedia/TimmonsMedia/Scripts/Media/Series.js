@@ -1,12 +1,14 @@
-﻿$(document).ready(function () {
-    var getSeries = '@Url.Action("GetSeries", "Media")';
+﻿
+
+$(document).ready(function () {
     $.getJSON(getSeries, DisplaySeries);
 });
 
 function DisplaySeries(response) {
     if (response != null) {
         for (var i = 0; i < response.length; i++) {
-            $("#seriesDiv").append("<button class='btn btn-large btn-success' style='margin-right:5px' id='series" + (i + 1) + "' onclick=\"LoadSeries(" + response[i].ID + ")\">" + response[i].Title + "</button>");
+            $("#seriesDiv").append("<img src='../../Media/Images/" + response[i].Title + ".png' style='margin-right:3px; margin-bottom:5px; width:200px; height88px:' id='series" + (response[i].ID) + "' onclick=\"LoadSeries(" +
+                                    response[i].ID + ")\" alt='" + response[i].Title + "'>");
         }
     }
 };
@@ -14,7 +16,10 @@ function DisplaySeries(response) {
 function LoadSeries(id) {
     $("#episodeDiv").empty();
 
-    var getEpisodes = '@Url.Action("GetEpisodes", "Home")/' + id;
+    $("img").removeClass("selected");
+    $("#series"+id).addClass("selected");
+
+    var getEpisodes = getEpisodesBySeries + id;
 
     $.getJSON(getEpisodes, DisplayEpisodes);
 };
@@ -38,10 +43,10 @@ function DisplayEpisodes(response) {
         }
         for (var i = 0; i < seasons.length; i++) {
             $("#episodeDiv").append("<br/>");
-            $("#episodeDiv").append("<ul id='season" + seasons[i] + "\' ><button class='btn btn-md btn-info' style='margin-bottom:10px' onclick=\"HideSeason('season" + seasons[i] + "')\"> Season " + seasons[i] + "</button></ul>");
+            $("#episodeDiv").append("<ul id='season" + seasons[i] + "\' ><button class='btn btn-md btn-info' style='margin-bottom:10px;' onclick=\"HideSeason('season" + seasons[i] + "')\"> Season " + seasons[i] + "</button></ul>");
         }
         for (var i = 0; i < response.length; i++) {
-            $("#season" + response[i].Season).append("<li style='margin-left:40px' class='season" + response[i].Season + "' ><button id='episode" + (i + 1) +
+            $("#season" + response[i].Season).append("<li style='margin-left:40px; display: none' class='season" + response[i].Season + "' ><button id='episode" + (i + 1) +
                                                      "' class='btn btn-sm btn-primary' onclick='LoadEpisode(" + response[i].ID + ")'>" + response[i].Title + "</button></li>");
         }
     }
@@ -54,13 +59,13 @@ function HideSeason(season) {
 function LoadEpisode(id) {
     $("#videoDiv").empty();
 
-    var GetFilename = '@Url.Action("GetFilename", "Home")/' + id;
+    var GetFilename = GetEpisodeById + id;
 
     $.getJSON(GetFilename, DisplayVideo);
 };
 function DisplayVideo(response) {
-    var season = document.getElementById("series" + response[0].seriesId);
-    var filename = "Media/Videos/" + season.innerHTML + "/";
+    var series = document.getElementById("series" + response[0].seriesId).alt;
+    var filename = "Media/Videos/" + series + "/";
     if (response[0].Season < 10) {
         filename = filename + "[S0" + response[0].Season;
     }

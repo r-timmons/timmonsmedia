@@ -26,18 +26,13 @@ namespace TimmonsMedia.Models.Repositories.DataSources
             
         //}
 
-        //public List<Episode> GetEpisodesBySeries(int id)
-        //{
-        //    using (var db = new DataContext(_conn))
-        //    {
-        //        return db.ExecuteQuery<Episode>("select * from episode where seriesId = " + id + " order by season, episodenum").ToList();
-        //    }
-        //}
-
-        //public List<Episode> GetEpisodeByID(int id)
-        //{
-        //    return db.ExecuteQuery<Episode>("select * from episode where id = " + id).ToList();
-        //}
+        public List<Episode> GetEpisodeByID(int id)
+        {
+            using (var db = new DataContext(_conn))
+            {
+                return db.ExecuteQuery<Episode>("select * from episode where id = " + id).ToList();
+            }
+        }
 
         public List<Series> GetSeries(int? id)
         {
@@ -45,6 +40,14 @@ namespace TimmonsMedia.Models.Repositories.DataSources
             {
                 // this will be stored procedure call - J will do later
                 return db.ExecuteQuery<Series>("SELECT ID, Title FROM Series ORDER BY Title").ToList();
+            }
+        }
+
+        public List<Episode> GetEpisodesBySeries(int? id)
+        {
+            using (var db = new DataContext(_conn))
+            {
+                return db.ExecuteQuery<Episode>("select * from episode where seriesId = " + id + " order by season, episodenum").ToList();
             }
         }
     }
